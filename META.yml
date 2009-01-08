@@ -1,0 +1,17 @@
+--- #YAML:1.0
+name:                UltraDNS
+version:             0.01
+abstract:            Client API for the NeuStar UltraDNS Transaction Protocol
+license:             ~
+author:              
+    - Tim Bunce <Tim.Bunce@pobox.com>
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
+    Net::SSLeay:                   1.35
+    RPC::XML:                      0.64
+    Test::Exception:               0
+    Test::More:                    0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
