@@ -14,6 +14,8 @@ use warnings;
 use strict;
 use Carp;
 
+our $VERSION = '0.02';
+
 =head1 NAME
 
 UltraDNS - Client API for the NeuStar UltraDNS Transaction Protocol
@@ -84,8 +86,6 @@ use RPC::XML::Parser;
 
 use UltraDNS::Type;
 use UltraDNS::Methods;
-
-our $VERSION = '0.01';
 
 my $xml_rpc_parser = RPC::XML::Parser->new();
 

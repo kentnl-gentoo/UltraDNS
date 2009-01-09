@@ -1,10 +1,18 @@
 Changes
-MANIFEST
-Makefile.PL
-README
 lib/UltraDNS.pm
+lib/UltraDNS/Methods.pm
+lib/UltraDNS/Type.pm
+Makefile
+Makefile.PL
+MANIFEST
+MANIFEST.SKIP
+mk_methods.pl
+README
 t/00.load.t
+t/01-connect.t
+t/02-basic.t
 t/perlcritic.t
 t/pod-coverage.t
 t/pod.t
+t/util.pl
 META.yml                                 Module meta-data (added by MakeMaker)

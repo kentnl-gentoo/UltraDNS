@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                UltraDNS
-version:             0.01
+version:             0.02
 abstract:            Client API for the NeuStar UltraDNS Transaction Protocol
 license:             ~
 author:              
