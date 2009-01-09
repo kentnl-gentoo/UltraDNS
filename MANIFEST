@@ -2,10 +2,8 @@ Changes
 lib/UltraDNS.pm
 lib/UltraDNS/Methods.pm
 lib/UltraDNS/Type.pm
-Makefile
 Makefile.PL
 MANIFEST
-MANIFEST.SKIP
 mk_methods.pl
 README
 t/00.load.t

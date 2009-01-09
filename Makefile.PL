@@ -14,8 +14,12 @@ WriteMakefile(
         'Net::SSLeay' => 1.35,
         'RPC::XML' => 0.64,
     },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'UltraDNS-*' },
+    dist    => {
+        DIST_DEFAULT=> 'clean distcheck disttest tardist',
+        PREOP => '$(MAKE) -f Makefile.old distdir',
+        COMPRESS => 'gzip -v9', SUFFIX => 'gz',
+    },
+    clean   => { FILES => 'UltraDNS-*' },
 );
 
 
