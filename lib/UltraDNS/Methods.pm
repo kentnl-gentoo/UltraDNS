@@ -4,7 +4,7 @@ package UltraDNS::Methods;
 
 UltraDNS::Methods - Available UltraDNS Transaction Protocol Methods
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
   use UltraDNS;
 
@@ -32,6 +32,10 @@ Transaction Protocol documentation.
 Refer to L<UltraDNS> for more details.
 
 =head1 METHODS
+
+The methods can be called either with our without the C<UDNS_> prefix that
+appears in the UltraDNS docs. They're shown here without the prefix because it
+I prefer it that way.
 
 =cut
 
@@ -2264,386 +2268,386 @@ $method_spec = {
 
 
 1;
-=head2 UDNS_AddMailForward
+=head2 AddMailForward
 
-  $udns->UDNS_AddMailForward($string, $string, $zonename);
+  $udns->AddMailForward($string, $string, $zonename);
 
   $string = emailTo
   $string = forwardTo
   $zonename = domain.
 
-=head2 UDNS_AddRestrictIPForAllZones
+=head2 AddRestrictIPForAllZones
 
-  $udns->UDNS_AddRestrictIPForAllZones($ip_address, $ip_address);
+  $udns->AddRestrictIPForAllZones($ip_address, $ip_address);
 
   $ip_address = start_ip
   $ip_address = end_ip
 
-=head2 UDNS_AddRestrictIPForZone
+=head2 AddRestrictIPForZone
 
-  $udns->UDNS_AddRestrictIPForZone($zonename, $ip_address, $ip_address);
+  $udns->AddRestrictIPForZone($zonename, $ip_address, $ip_address);
 
   $zonename = Zone.
   $ip_address = start_ip
   $ip_address = end_ip
 
-=head2 UDNS_AddUserXInfo
+=head2 AddUserXInfo
 
-  $udns->UDNS_AddUserXInfo($string, $string, $string);
+  $udns->AddUserXInfo($string, $string, $string);
 
   $string = Username
   $string = FieldName
   $string = Value
 
-=head2 UDNS_AddWebForward
+=head2 AddWebForward
 
-  $udns->UDNS_AddWebForward($string, $string, $unsigned, $zonename);
+  $udns->AddWebForward($string, $string, $unsigned, $zonename);
 
   $string = requestTo
   $string = redirectTo
   $unsigned = forwardType
   $zonename = domain.
 
-=head2 UDNS_ChangeAliasOfCNAMERecord
+=head2 ChangeAliasOfCNAMERecord
 
-  $udns->UDNS_ChangeAliasOfCNAMERecord($zonename, $hostname, $hostname, $hostname);
+  $udns->ChangeAliasOfCNAMERecord($zonename, $hostname, $hostname, $hostname);
 
   $zonename = Zone.
   $hostname = alias.
   $hostname = host.
   $hostname = NewAlias.
 
-=head2 UDNS_ChangeContentOfTXTRecord 
+=head2 ChangeContentOfTXTRecord 
 
-  $udns->UDNS_ChangeContentOfTXTRecord ($zonename, $hostname, $string, $string);
+  $udns->ChangeContentOfTXTRecord ($zonename, $hostname, $string, $string);
 
   $zonename = Zone.
   $hostname = Hostname.
   $string = OldContent
   $string = NewContent
 
-=head2 UDNS_ChangeEmailOfSOARecord
+=head2 ChangeEmailOfSOARecord
 
-  $udns->UDNS_ChangeEmailOfSOARecord($zonename, $string);
+  $udns->ChangeEmailOfSOARecord($zonename, $string);
 
   $zonename = Zone.
   $string = user@domain.com
 
-=head2 UDNS_ChangeExpireLimitOfSOARecord
+=head2 ChangeExpireLimitOfSOARecord
 
-  $udns->UDNS_ChangeExpireLimitOfSOARecord($zonename, $unsigned);
+  $udns->ChangeExpireLimitOfSOARecord($zonename, $unsigned);
 
   $zonename = Zone.
   $unsigned = 86400
 
-=head2 UDNS_ChangeHostOfAAAARecord
+=head2 ChangeHostOfAAAARecord
 
-  $udns->UDNS_ChangeHostOfAAAARecord($zonename, $hostname, $ipv6_address, $hostname);
+  $udns->ChangeHostOfAAAARecord($zonename, $hostname, $ipv6_address, $hostname);
 
   $zonename = Zone.
   $hostname = Hostname.
   $ipv6_address = IPAddress
   $hostname = NewHostname.
 
-=head2 UDNS_ChangeHostOfARecord
+=head2 ChangeHostOfARecord
 
-  $udns->UDNS_ChangeHostOfARecord($zonename, $hostname, $ip_address, $hostname);
+  $udns->ChangeHostOfARecord($zonename, $hostname, $ip_address, $hostname);
 
   $zonename = Zone.
   $hostname = host.
   $ip_address = 1.1.1.1
   $hostname = NewHost.
 
-=head2 UDNS_ChangeHostOfCNAMERecord
+=head2 ChangeHostOfCNAMERecord
 
-  $udns->UDNS_ChangeHostOfCNAMERecord($zonename, $hostname, $hostname, $hostname);
+  $udns->ChangeHostOfCNAMERecord($zonename, $hostname, $hostname, $hostname);
 
   $zonename = Zone.
   $hostname = alias.
   $hostname = host.
   $hostname = NewHost.
 
-=head2 UDNS_ChangeHostOfPTRRecord
+=head2 ChangeHostOfPTRRecord
 
-  $udns->UDNS_ChangeHostOfPTRRecord($zonename, $hostname, $hostname, $hostname);
+  $udns->ChangeHostOfPTRRecord($zonename, $hostname, $hostname, $hostname);
 
   $zonename = Zone.
   $hostname = 1.1.1.1.in-addr.arpa.
   $hostname = host.
   $hostname = NewHost.
 
-=head2 UDNS_ChangeHostOfTXTRecord
+=head2 ChangeHostOfTXTRecord
 
-  $udns->UDNS_ChangeHostOfTXTRecord($zonename, $hostname, $string, $hostname);
+  $udns->ChangeHostOfTXTRecord($zonename, $hostname, $string, $hostname);
 
   $zonename = Zone.
   $hostname = Hostname.
   $string = Content
   $hostname = NewHostname.
 
-=head2 UDNS_ChangeIPOfAAAARecord
+=head2 ChangeIPOfAAAARecord
 
-  $udns->UDNS_ChangeIPOfAAAARecord($zonename, $hostname, $ipv6_address, $ipv6_address);
+  $udns->ChangeIPOfAAAARecord($zonename, $hostname, $ipv6_address, $ipv6_address);
 
   $zonename = Zone.
   $hostname = Hostname.
   $ipv6_address = IPAddress
   $ipv6_address = New IP
 
-=head2 UDNS_ChangeIPOfARecord
+=head2 ChangeIPOfARecord
 
-  $udns->UDNS_ChangeIPOfARecord($zonename, $hostname, $ip_address, $ip_address);
+  $udns->ChangeIPOfARecord($zonename, $hostname, $ip_address, $ip_address);
 
   $zonename = Zone.
   $hostname = host.
   $ip_address = 1.1.1.1
   $ip_address = 1.1.2.2
 
-=head2 UDNS_ChangeIPOfPTRRecord
+=head2 ChangeIPOfPTRRecord
 
-  $udns->UDNS_ChangeIPOfPTRRecord($zonename, $hostname, $hostname, $hostname);
+  $udns->ChangeIPOfPTRRecord($zonename, $hostname, $hostname, $hostname);
 
   $zonename = Zone.
   $hostname = 1.1.1.1.in-addr.arpa.
   $hostname = host.
   $hostname = 1.1.2.2.in-addr.arpa.
 
-=head2 UDNS_ChangeMailServerOfMXRecord
+=head2 ChangeMailServerOfMXRecord
 
-  $udns->UDNS_ChangeMailServerOfMXRecord($zonename, $zonename, $hostname, $hostname);
+  $udns->ChangeMailServerOfMXRecord($zonename, $zonename, $hostname, $hostname);
 
   $zonename = Zone.
   $zonename = ServedZone.
   $hostname = MailServer.
   $hostname = NewServer.
 
-=head2 UDNS_ChangeMinimumCacheOfSOARecord
+=head2 ChangeMinimumCacheOfSOARecord
 
-  $udns->UDNS_ChangeMinimumCacheOfSOARecord($zonename, $unsigned);
+  $udns->ChangeMinimumCacheOfSOARecord($zonename, $unsigned);
 
   $zonename = Zone.
   $unsigned = 86400
 
-=head2 UDNS_ChangeNameServerOfNSRecord
+=head2 ChangeNameServerOfNSRecord
 
-  $udns->UDNS_ChangeNameServerOfNSRecord($zonename, $zonename, $hostname, $hostname);
+  $udns->ChangeNameServerOfNSRecord($zonename, $zonename, $hostname, $hostname);
 
   $zonename = Zone.
   $zonename = ServedDomain.
   $hostname = NameServer.
   $hostname = NewNameServer.
 
-=head2 UDNS_ChangeNameServerOfSOARecord
+=head2 ChangeNameServerOfSOARecord
 
-  $udns->UDNS_ChangeNameServerOfSOARecord($zonename, $hostname);
+  $udns->ChangeNameServerOfSOARecord($zonename, $hostname);
 
   $zonename = Zone.
   $hostname = NewNameServer.
 
-=head2 UDNS_ChangePriorityOfMXRecord
+=head2 ChangePriorityOfMXRecord
 
-  $udns->UDNS_ChangePriorityOfMXRecord($zonename, $zonename, $hostname, $unsigned_short);
+  $udns->ChangePriorityOfMXRecord($zonename, $zonename, $hostname, $unsigned_short);
 
   $zonename = Zone.
   $zonename = ServedZone.
   $hostname = MailServer.
   $unsigned_short = 10
 
-=head2 UDNS_ChangeRefreshIntervalOfSOARecord
+=head2 ChangeRefreshIntervalOfSOARecord
 
-  $udns->UDNS_ChangeRefreshIntervalOfSOARecord($zonename, $unsigned);
-
-  $zonename = Zone.
-  $unsigned = 86400
-
-=head2 UDNS_ChangeRetryIntervalOfSOARecord
-
-  $udns->UDNS_ChangeRetryIntervalOfSOARecord($zonename, $unsigned);
+  $udns->ChangeRefreshIntervalOfSOARecord($zonename, $unsigned);
 
   $zonename = Zone.
   $unsigned = 86400
 
-=head2 UDNS_ChangeSerialNumberOfSOARecord
+=head2 ChangeRetryIntervalOfSOARecord
 
-  $udns->UDNS_ChangeSerialNumberOfSOARecord($zonename, $string);
+  $udns->ChangeRetryIntervalOfSOARecord($zonename, $unsigned);
+
+  $zonename = Zone.
+  $unsigned = 86400
+
+=head2 ChangeSerialNumberOfSOARecord
+
+  $udns->ChangeSerialNumberOfSOARecord($zonename, $string);
 
   $zonename = Zone.
   $string = Serial Number
 
-=head2 UDNS_ChangeServedDomainOfNSRecord
+=head2 ChangeServedDomainOfNSRecord
 
-  $udns->UDNS_ChangeServedDomainOfNSRecord($zonename, $zonename, $hostname, $zonename);
+  $udns->ChangeServedDomainOfNSRecord($zonename, $zonename, $hostname, $zonename);
 
   $zonename = Zone.
   $zonename = ServedDomain.
   $hostname = NameServer.
   $zonename = NewDomain.
 
-=head2 UDNS_ChangeServedZoneOfMXRecord
+=head2 ChangeServedZoneOfMXRecord
 
-  $udns->UDNS_ChangeServedZoneOfMXRecord($zonename, $zonename, $hostname, $zonename);
+  $udns->ChangeServedZoneOfMXRecord($zonename, $zonename, $hostname, $zonename);
 
   $zonename = Zone.
   $zonename = ServedZone.
   $hostname = MailServer.
   $zonename = NewZone.
 
-=head2 UDNS_ChangeTTLOfAAAARecord
+=head2 ChangeTTLOfAAAARecord
 
-  $udns->UDNS_ChangeTTLOfAAAARecord($zonename, $hostname, $ipv6_address, $unsigned);
+  $udns->ChangeTTLOfAAAARecord($zonename, $hostname, $ipv6_address, $unsigned);
 
   $zonename = Zone.
   $hostname = Hostname.
   $ipv6_address = IPAddress
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfARecord
+=head2 ChangeTTLOfARecord
 
-  $udns->UDNS_ChangeTTLOfARecord($zonename, $hostname, $ip_address, $unsigned);
+  $udns->ChangeTTLOfARecord($zonename, $hostname, $ip_address, $unsigned);
 
   $zonename = Zone.
   $hostname = host.
   $ip_address = 1.1.1.1
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfCNAMERecord
+=head2 ChangeTTLOfCNAMERecord
 
-  $udns->UDNS_ChangeTTLOfCNAMERecord($zonename, $hostname, $hostname, $unsigned);
+  $udns->ChangeTTLOfCNAMERecord($zonename, $hostname, $hostname, $unsigned);
 
   $zonename = Zone.
   $hostname = alias.
   $hostname = host.
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfMXRecord
+=head2 ChangeTTLOfMXRecord
 
-  $udns->UDNS_ChangeTTLOfMXRecord($zonename, $zonename, $hostname, $unsigned);
+  $udns->ChangeTTLOfMXRecord($zonename, $zonename, $hostname, $unsigned);
 
   $zonename = Zone.
   $zonename = ServedZone.
   $hostname = MailServer.
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfNSRecord
+=head2 ChangeTTLOfNSRecord
 
-  $udns->UDNS_ChangeTTLOfNSRecord($zonename, $zonename, $hostname, $unsigned);
+  $udns->ChangeTTLOfNSRecord($zonename, $zonename, $hostname, $unsigned);
 
   $zonename = Zone.
   $zonename = ServedDomain.
   $hostname = NameServer.
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfPTRRecord
+=head2 ChangeTTLOfPTRRecord
 
-  $udns->UDNS_ChangeTTLOfPTRRecord($zonename, $hostname, $hostname, $unsigned);
+  $udns->ChangeTTLOfPTRRecord($zonename, $hostname, $hostname, $unsigned);
 
   $zonename = Zone.
   $hostname = 1.1.1.1.in-addr.arpa.
   $hostname = host.
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfSOARecord
+=head2 ChangeTTLOfSOARecord
 
-  $udns->UDNS_ChangeTTLOfSOARecord($zonename, $unsigned);
+  $udns->ChangeTTLOfSOARecord($zonename, $unsigned);
 
   $zonename = Zone.
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeTTLOfTXTRecord
+=head2 ChangeTTLOfTXTRecord
 
-  $udns->UDNS_ChangeTTLOfTXTRecord($zonename, $hostname, $string, $unsigned);
+  $udns->ChangeTTLOfTXTRecord($zonename, $hostname, $string, $unsigned);
 
   $zonename = Zone.
   $hostname = Hostname.
   $string = Content
   $unsigned = NewTTL
 
-=head2 UDNS_ChangeUserEmail
+=head2 ChangeUserEmail
 
-  $udns->UDNS_ChangeUserEmail($string, $string);
+  $udns->ChangeUserEmail($string, $string);
 
   $string = UserName
   $string = NewEmail
 
-=head2 UDNS_ChangeUserPassword
+=head2 ChangeUserPassword
 
-  $udns->UDNS_ChangeUserPassword($string, $string, $string);
+  $udns->ChangeUserPassword($string, $string, $string);
 
   $string = UserName
   $string = OldPassword
   $string = NewPassword
 
-=head2 UDNS_CloseConnection
+=head2 CloseConnection
 
-  $udns->UDNS_CloseConnection;
+  $udns->CloseConnection;
 
-=head2 UDNS_CreateAAAARecord
+=head2 CreateAAAARecord
 
-  $udns->UDNS_CreateAAAARecord($zonename, $hostname, $ipv6_address);
+  $udns->CreateAAAARecord($zonename, $hostname, $ipv6_address);
 
   $zonename = Zone.
   $hostname = Hostname.
   $ipv6_address = IPAddress
 
-=head2 UDNS_CreateARecord
+=head2 CreateARecord
 
-  $udns->UDNS_CreateARecord($zonename, $hostname, $ip_address);
+  $udns->CreateARecord($zonename, $hostname, $ip_address);
 
   $zonename = ZoneName.
   $hostname = HostName.
   $ip_address = ipAddr
 
-=head2 UDNS_CreateCNAMERecord
+=head2 CreateCNAMERecord
 
-  $udns->UDNS_CreateCNAMERecord($zonename, $hostname, $hostname);
+  $udns->CreateCNAMERecord($zonename, $hostname, $hostname);
 
   $zonename = ZoneName.
   $hostname = Alias.
   $hostname = HostName.
 
-=head2 UDNS_CreateMXRecord
+=head2 CreateMXRecord
 
-  $udns->UDNS_CreateMXRecord($zonename, $zonename, $hostname, $unsigned_short);
+  $udns->CreateMXRecord($zonename, $zonename, $hostname, $unsigned_short);
 
   $zonename = ZoneName.
   $zonename = ServedZone.
   $hostname = MailServer.
   $unsigned_short = priority
 
-=head2 UDNS_CreateNSRecord
+=head2 CreateNSRecord
 
-  $udns->UDNS_CreateNSRecord($zonename, $zonename, $hostname);
+  $udns->CreateNSRecord($zonename, $zonename, $hostname);
 
   $zonename = ZoneName.
   $zonename = SubDomain.
   $hostname = NameServer.
 
-=head2 UDNS_CreatePTRRecord
+=head2 CreatePTRRecord
 
-  $udns->UDNS_CreatePTRRecord($zonename, $hostname, $hostname);
+  $udns->CreatePTRRecord($zonename, $hostname, $hostname);
 
   $zonename = ZoneName.
   $hostname = 4.3.2.1.in-addr.arpa.
   $hostname = HostName.
 
-=head2 UDNS_CreatePrimaryZone
+=head2 CreatePrimaryZone
 
-  $udns->UDNS_CreatePrimaryZone($zonename);
+  $udns->CreatePrimaryZone($zonename);
 
   $zonename = ZoneName.
 
-=head2 UDNS_CreateRPRecord
+=head2 CreateRPRecord
 
-  $udns->UDNS_CreateRPRecord($zonename, $hostname, $string, $string);
+  $udns->CreateRPRecord($zonename, $hostname, $string, $string);
 
   $zonename = Zone.
   $hostname = Host.
   $string = user@domain.com
   $string = data.
 
-=head2 UDNS_CreateResourceRecord
+=head2 CreateResourceRecord
 
-  $udns->UDNS_CreateResourceRecord($id, $hostname, $unsigned_short, $unsigned_short, $unsigned_short, $hexint);
+  $udns->CreateResourceRecord($id, $hostname, $unsigned_short, $unsigned_short, $unsigned_short, $hexint);
 
   $id = 0303372E01CBF764
   $hostname = www.example.biz.
@@ -2652,9 +2656,9 @@ $method_spec = {
   $unsigned_short = 300
   $hexint = 982a1479b1273891273c81279831d
 
-=head2 UDNS_CreateSSHFPRecord
+=head2 CreateSSHFPRecord
 
-  $udns->UDNS_CreateSSHFPRecord($zonename, $hostname, $unsigned_short, $unsigned_short, $string);
+  $udns->CreateSSHFPRecord($zonename, $hostname, $unsigned_short, $unsigned_short, $string);
 
   $zonename = test.zone.
   $hostname = sshfp2.test.zonel.
@@ -2662,24 +2666,24 @@ $method_spec = {
   $unsigned_short = 1
   $string = 0123456789abcdef
 
-=head2 UDNS_CreateSecondaryZone
+=head2 CreateSecondaryZone
 
-  $udns->UDNS_CreateSecondaryZone($zonename, $ip_address);
+  $udns->CreateSecondaryZone($zonename, $ip_address);
 
   $zonename = ZoneName.
   $ip_address = PrimaryNameServer
 
-=head2 UDNS_CreateTXTRecord
+=head2 CreateTXTRecord
 
-  $udns->UDNS_CreateTXTRecord($zonename, $hostname, $string);
+  $udns->CreateTXTRecord($zonename, $hostname, $string);
 
   $zonename = Zone.
   $hostname = Hostname.
   $string = Content
 
-=head2 UDNS_CreateUser
+=head2 CreateUser
 
-  $udns->UDNS_CreateUser($string, $string, $string, $string, $string, $string, $string);
+  $udns->CreateUser($string, $string, $string, $string, $string, $string, $string);
 
   $string = NewUserName
   $string = Password
@@ -2689,283 +2693,283 @@ $method_spec = {
   $string = ServicePkg
   $string = PricingPkg
 
-=head2 UDNS_DeleteAAAARecord
+=head2 DeleteAAAARecord
 
-  $udns->UDNS_DeleteAAAARecord($zonename, $hostname, $ipv6_address);
+  $udns->DeleteAAAARecord($zonename, $hostname, $ipv6_address);
 
   $zonename = Zone.
   $hostname = Hostname.
   $ipv6_address = IPAddress
 
-=head2 UDNS_DeleteARecord
+=head2 DeleteARecord
 
-  $udns->UDNS_DeleteARecord($zonename, $hostname, $ip_address);
+  $udns->DeleteARecord($zonename, $hostname, $ip_address);
 
   $zonename = ZoneName.
   $hostname = HostName.
   $ip_address = ipAddr
 
-=head2 UDNS_DeleteAllRecordsOfUser
+=head2 DeleteAllRecordsOfUser
 
-  $udns->UDNS_DeleteAllRecordsOfUser($string);
+  $udns->DeleteAllRecordsOfUser($string);
 
   $string = UserName
 
-=head2 UDNS_DeleteCNAMERecord
+=head2 DeleteCNAMERecord
 
-  $udns->UDNS_DeleteCNAMERecord($zonename, $hostname);
+  $udns->DeleteCNAMERecord($zonename, $hostname);
 
   $zonename = ZoneName.
   $hostname = Alias.
 
-=head2 UDNS_DeleteMXRecord
+=head2 DeleteMXRecord
 
-  $udns->UDNS_DeleteMXRecord($zonename, $zonename, $hostname);
+  $udns->DeleteMXRecord($zonename, $zonename, $hostname);
 
   $zonename = ZoneName.
   $zonename = ServedZone.
   $hostname = MailServer.
 
-=head2 UDNS_DeleteMailForward
+=head2 DeleteMailForward
 
-  $udns->UDNS_DeleteMailForward($string, $zonename);
+  $udns->DeleteMailForward($string, $zonename);
 
   $string = guid
   $zonename = domain.
 
-=head2 UDNS_DeleteNSRecord
+=head2 DeleteNSRecord
 
-  $udns->UDNS_DeleteNSRecord($zonename, $zonename, $hostname);
+  $udns->DeleteNSRecord($zonename, $zonename, $hostname);
 
   $zonename = ZoneName.
   $zonename = SubDomain.
   $hostname = NameServer.
 
-=head2 UDNS_DeletePTRRecord
+=head2 DeletePTRRecord
 
-  $udns->UDNS_DeletePTRRecord($zonename, $hostname, $hostname);
+  $udns->DeletePTRRecord($zonename, $hostname, $hostname);
 
   $zonename = ZoneName.
   $hostname = 4.3.2.1.in-addr.arpa.
   $hostname = HostName.
 
-=head2 UDNS_DeleteRPRecord
+=head2 DeleteRPRecord
 
-  $udns->UDNS_DeleteRPRecord($zonename, $hostname, $string);
+  $udns->DeleteRPRecord($zonename, $hostname, $string);
 
   $zonename = Zone.
   $hostname = Host.
   $string = email
 
-=head2 UDNS_DeleteResourceRecord
+=head2 DeleteResourceRecord
 
-  $udns->UDNS_DeleteResourceRecord($id, $id);
+  $udns->DeleteResourceRecord($id, $id);
 
   $id = 0303372E01CBF764
   $id = 0403372E01CBF99F
 
-=head2 UDNS_DeleteSSHFPRecord
+=head2 DeleteSSHFPRecord
 
-  $udns->UDNS_DeleteSSHFPRecord($zonename, $hostname);
+  $udns->DeleteSSHFPRecord($zonename, $hostname);
 
   $zonename = test.zone.
   $hostname = sshfp.test.zone.
 
-=head2 UDNS_DeleteTXTRecord
+=head2 DeleteTXTRecord
 
-  $udns->UDNS_DeleteTXTRecord($zonename, $hostname);
+  $udns->DeleteTXTRecord($zonename, $hostname);
 
   $zonename = Zone.
   $hostname = Hostname.
 
-=head2 UDNS_DeleteUser
+=head2 DeleteUser
 
-  $udns->UDNS_DeleteUser($string);
+  $udns->DeleteUser($string);
 
   $string = UserName
 
-=head2 UDNS_DeleteUserXInfo
+=head2 DeleteUserXInfo
 
-  $udns->UDNS_DeleteUserXInfo($string, $string);
+  $udns->DeleteUserXInfo($string, $string);
 
   $string = Username
   $string = FieldName
 
-=head2 UDNS_DeleteWebForward
+=head2 DeleteWebForward
 
-  $udns->UDNS_DeleteWebForward($string, $zonename);
+  $udns->DeleteWebForward($string, $zonename);
 
   $string = guid
   $zonename = domain.
 
-=head2 UDNS_DeleteZone
+=head2 DeleteZone
 
-  $udns->UDNS_DeleteZone($zonename);
+  $udns->DeleteZone($zonename);
 
   $zonename = ZoneName.
 
-=head2 UDNS_DisableAutoSerialUpdate
+=head2 DisableAutoSerialUpdate
 
-  $udns->UDNS_DisableAutoSerialUpdate;
+  $udns->DisableAutoSerialUpdate;
 
-=head2 UDNS_Disconnect
+=head2 Disconnect
 
-  $udns->UDNS_Disconnect;
+  $udns->Disconnect;
 
-=head2 UDNS_EnableAutoSerialUpdate
+=head2 EnableAutoSerialUpdate
 
-  $udns->UDNS_EnableAutoSerialUpdate;
+  $udns->EnableAutoSerialUpdate;
 
-=head2 UDNS_FindResourceRecords
+=head2 FindResourceRecords
 
-  $udns->UDNS_FindResourceRecords($id, $hostname, $unsigned_short);
+  $udns->FindResourceRecords($id, $hostname, $unsigned_short);
 
   $id = 0123456789ABCDEF
   $hostname = hostname.myzone.com.
   $unsigned_short = 1
 
-=head2 UDNS_GetAAAARecordsOfZone
+=head2 GetAAAARecordsOfZone
 
-  $udns->UDNS_GetAAAARecordsOfZone($zonename);
-
-  $zonename = Zone.
-
-=head2 UDNS_GetARecordsOfZone
-
-  $udns->UDNS_GetARecordsOfZone($zonename);
+  $udns->GetAAAARecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetASNForRecord
+=head2 GetARecordsOfZone
 
-  $udns->UDNS_GetASNForRecord($id, $id);
+  $udns->GetARecordsOfZone($zonename);
+
+  $zonename = Zone.
+
+=head2 GetASNForRecord
+
+  $udns->GetASNForRecord($id, $id);
 
   $id = 0123456789ABCDEF
   $id = 123456789ABCDEF0
 
-=head2 UDNS_GetASNList
+=head2 GetASNList
 
-  $udns->UDNS_GetASNList;
+  $udns->GetASNList;
 
-=head2 UDNS_GetAllRRsOfZone
+=head2 GetAllRRsOfZone
 
-  $udns->UDNS_GetAllRRsOfZone($zonename);
+  $udns->GetAllRRsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetAllZonesOfUser
+=head2 GetAllZonesOfUser
 
-  $udns->UDNS_GetAllZonesOfUser($string);
+  $udns->GetAllZonesOfUser($string);
 
   $string = UserName
 
-=head2 UDNS_GetAutoSerialUpdateState
+=head2 GetAutoSerialUpdateState
 
-  $udns->UDNS_GetAutoSerialUpdateState;
+  $udns->GetAutoSerialUpdateState;
 
-=head2 UDNS_GetCNAMERecordsOfZone
+=head2 GetCNAMERecordsOfZone
 
-  $udns->UDNS_GetCNAMERecordsOfZone($zonename);
+  $udns->GetCNAMERecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetDirectionalMaskForRecord
+=head2 GetDirectionalMaskForRecord
 
-  $udns->UDNS_GetDirectionalMaskForRecord($id, $id);
+  $udns->GetDirectionalMaskForRecord($id, $id);
 
   $id = 0123456789ABCDEF
   $id = 123456789ABCDEF0
 
-=head2 UDNS_GetDirectionalServerList
+=head2 GetDirectionalServerList
 
-  $udns->UDNS_GetDirectionalServerList;
+  $udns->GetDirectionalServerList;
 
-=head2 UDNS_GetMXRecordsOfZone
+=head2 GetMXRecordsOfZone
 
-  $udns->UDNS_GetMXRecordsOfZone($zonename);
-
-  $zonename = Zone.
-
-=head2 UDNS_GetNSRecordsOfZone
-
-  $udns->UDNS_GetNSRecordsOfZone($zonename);
+  $udns->GetMXRecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetPTRRecordsOfZone
+=head2 GetNSRecordsOfZone
 
-  $udns->UDNS_GetPTRRecordsOfZone($zonename);
+  $udns->GetNSRecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetPrimaryZonesOfUser
+=head2 GetPTRRecordsOfZone
 
-  $udns->UDNS_GetPrimaryZonesOfUser($string);
+  $udns->GetPTRRecordsOfZone($zonename);
+
+  $zonename = Zone.
+
+=head2 GetPrimaryZonesOfUser
+
+  $udns->GetPrimaryZonesOfUser($string);
 
   $string = UserName
 
-=head2 UDNS_GetRPRecordsOfZone
+=head2 GetRPRecordsOfZone
 
-  $udns->UDNS_GetRPRecordsOfZone($zonename);
+  $udns->GetRPRecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetRecordsOfDnameByType
+=head2 GetRecordsOfDnameByType
 
-  $udns->UDNS_GetRecordsOfDnameByType($zonename, $hostname, $int);
+  $udns->GetRecordsOfDnameByType($zonename, $hostname, $int);
 
   $zonename = Zone.
   $hostname = Hostname.
   $int = Type
 
-=head2 UDNS_GetSOARecordOfZone
+=head2 GetSOARecordOfZone
 
-  $udns->UDNS_GetSOARecordOfZone($zonename);
+  $udns->GetSOARecordOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetSSHFPRecordsOfZone
+=head2 GetSSHFPRecordsOfZone
 
-  $udns->UDNS_GetSSHFPRecordsOfZone($zonename);
+  $udns->GetSSHFPRecordsOfZone($zonename);
 
   $zonename = test.zone.
 
-=head2 UDNS_GetSecondaryZonesOfUser
+=head2 GetSecondaryZonesOfUser
 
-  $udns->UDNS_GetSecondaryZonesOfUser($string);
+  $udns->GetSecondaryZonesOfUser($string);
 
   $string = UserName
 
-=head2 UDNS_GetServerStatus
+=head2 GetServerStatus
 
-  $udns->UDNS_GetServerStatus;
+  $udns->GetServerStatus;
 
-=head2 UDNS_GetTXTRecordsOfZone
+=head2 GetTXTRecordsOfZone
 
-  $udns->UDNS_GetTXTRecordsOfZone($zonename);
+  $udns->GetTXTRecordsOfZone($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_GetUserXInfo
+=head2 GetUserXInfo
 
-  $udns->UDNS_GetUserXInfo($string, $string);
+  $udns->GetUserXInfo($string, $string);
 
   $string = Username
   $string = FieldName
 
-=head2 UDNS_GetUsers
+=head2 GetUsers
 
-  $udns->UDNS_GetUsers;
+  $udns->GetUsers;
 
-=head2 UDNS_GetZoneInfo
+=head2 GetZoneInfo
 
-  $udns->UDNS_GetZoneInfo($zonename);
+  $udns->GetZoneInfo($zonename);
 
   $zonename = test.zone.
 
-=head2 UDNS_GrantPermissionsToAccountZonesForUser
+=head2 GrantPermissionsToAccountZonesForUser
 
-  $udns->UDNS_GrantPermissionsToAccountZonesForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+  $udns->GrantPermissionsToAccountZonesForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
 
   $string = account
   $string = user
@@ -2978,9 +2982,9 @@ $method_spec = {
   $boolean = denyUpdate
   $boolean = denyDelete
 
-=head2 UDNS_GrantPermissionsToMailForwardForUser
+=head2 GrantPermissionsToMailForwardForUser
 
-  $udns->UDNS_GrantPermissionsToMailForwardForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+  $udns->GrantPermissionsToMailForwardForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
 
   $string = user
   $string = mailforward
@@ -2993,9 +2997,9 @@ $method_spec = {
   $boolean = denyUpdate
   $boolean = denyDelete
 
-=head2 UDNS_GrantPermissionsToWebForwardForUser
+=head2 GrantPermissionsToWebForwardForUser
 
-  $udns->UDNS_GrantPermissionsToWebForwardForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+  $udns->GrantPermissionsToWebForwardForUser($string, $string, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
 
   $string = user
   $string = webforward
@@ -3008,24 +3012,9 @@ $method_spec = {
   $boolean = denyUpdate
   $boolean = denyDelete
 
-=head2 UDNS_GrantPermissionsToZoneForUser
+=head2 GrantPermissionsToZoneForUser
 
-  $udns->UDNS_GrantPermissionsToZoneForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
-
-  $string = user
-  $zonename = Zone.
-  $boolean = allowCreate
-  $boolean = allowRead
-  $boolean = allowUpdate
-  $boolean = allowDelete
-  $boolean = denyCreate
-  $boolean = denyRead
-  $boolean = denyUpdate
-  $boolean = denyDelete
-
-=head2 UDNS_GrantPermissionsToZoneMailForwardsForUser
-
-  $udns->UDNS_GrantPermissionsToZoneMailForwardsForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+  $udns->GrantPermissionsToZoneForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
 
   $string = user
   $zonename = Zone.
@@ -3038,9 +3027,9 @@ $method_spec = {
   $boolean = denyUpdate
   $boolean = denyDelete
 
-=head2 UDNS_GrantPermissionsToZoneWebForwardsForUser
+=head2 GrantPermissionsToZoneMailForwardsForUser
 
-  $udns->UDNS_GrantPermissionsToZoneWebForwardsForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+  $udns->GrantPermissionsToZoneMailForwardsForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
 
   $string = user
   $zonename = Zone.
@@ -3053,95 +3042,110 @@ $method_spec = {
   $boolean = denyUpdate
   $boolean = denyDelete
 
-=head2 UDNS_QueryMailForwards
+=head2 GrantPermissionsToZoneWebForwardsForUser
 
-  $udns->UDNS_QueryMailForwards($zonename);
+  $udns->GrantPermissionsToZoneWebForwardsForUser($string, $zonename, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean, $boolean);
+
+  $string = user
+  $zonename = Zone.
+  $boolean = allowCreate
+  $boolean = allowRead
+  $boolean = allowUpdate
+  $boolean = allowDelete
+  $boolean = denyCreate
+  $boolean = denyRead
+  $boolean = denyUpdate
+  $boolean = denyDelete
+
+=head2 QueryMailForwards
+
+  $udns->QueryMailForwards($zonename);
 
   $zonename = domain.
 
-=head2 UDNS_QueryWebForwards
+=head2 QueryWebForwards
 
-  $udns->UDNS_QueryWebForwards($zonename);
+  $udns->QueryWebForwards($zonename);
 
   $zonename = domain.
 
-=head2 UDNS_RemoveRestrictIPForAllZones
+=head2 RemoveRestrictIPForAllZones
 
-  $udns->UDNS_RemoveRestrictIPForAllZones;
+  $udns->RemoveRestrictIPForAllZones;
 
-=head2 UDNS_RemoveRestrictIPForZone
+=head2 RemoveRestrictIPForZone
 
-  $udns->UDNS_RemoveRestrictIPForZone($zonename, $ip_address, $ip_address);
+  $udns->RemoveRestrictIPForZone($zonename, $ip_address, $ip_address);
 
   $zonename = Zone.
   $ip_address = start_ip
   $ip_address = end_ip
 
-=head2 UDNS_RequestZoneTransfer
+=head2 RequestZoneTransfer
 
-  $udns->UDNS_RequestZoneTransfer($zonename);
+  $udns->RequestZoneTransfer($zonename);
 
   $zonename = Zone.
 
-=head2 UDNS_SetASNForRecord
+=head2 SetASNForRecord
 
-  $udns->UDNS_SetASNForRecord($id, $id, $integer);
+  $udns->SetASNForRecord($id, $id, $integer);
 
   $id = 0123456789ABCDEF
   $id = 123456789ABCDEF0
   $integer = 1
 
-=head2 UDNS_SetDirectionalMaskForRecord
+=head2 SetDirectionalMaskForRecord
 
-  $udns->UDNS_SetDirectionalMaskForRecord($id, $id, \@array);
+  $udns->SetDirectionalMaskForRecord($id, $id, \@array);
 
   $id = 0123456789ABCDEF
   $id = 123456789ABCDEF0
   \@array = [ $unsigned_int, ... ]
 
-=head2 UDNS_UpdateAAAARecords
+=head2 UpdateAAAARecords
 
-  $udns->UDNS_UpdateAAAARecords($zonename, $hostname, @ipv6_address);
+  $udns->UpdateAAAARecords($zonename, $hostname, @ipv6_address);
 
   $zonename = Zone.
   $hostname = Hostname.
   @ipv6_address = (IPAddress, ...)
 
-=head2 UDNS_UpdateARecords
+=head2 UpdateARecords
 
-  $udns->UDNS_UpdateARecords($zonename, $hostname, @ip_address);
+  $udns->UpdateARecords($zonename, $hostname, @ip_address);
 
   $zonename = Zone.
   $hostname = Hostname.
   @ip_address = (IP address, ...)
 
-=head2 UDNS_UpdateCNAMERecords
+=head2 UpdateCNAMERecords
 
-  $udns->UDNS_UpdateCNAMERecords($zonename, $hostname, @hostname);
+  $udns->UpdateCNAMERecords($zonename, $hostname, @hostname);
 
   $zonename = Zone.
   $hostname = CNAME.
   @hostname = (Hostname., ...)
 
-=head2 UDNS_UpdateMailForward
+=head2 UpdateMailForward
 
-  $udns->UDNS_UpdateMailForward($string, $string, $zonename);
+  $udns->UpdateMailForward($string, $string, $zonename);
 
   $string = guid
   $string = forwardTo
   $zonename = domain.
 
-=head2 UDNS_UpdateNSRecords
+=head2 UpdateNSRecords
 
-  $udns->UDNS_UpdateNSRecords($zonename, $zonename, @hostname);
+  $udns->UpdateNSRecords($zonename, $zonename, @hostname);
 
   $zonename = Zone.
   $zonename = Zone for NS.
   @hostname = (NS hostname., ...)
 
-=head2 UDNS_UpdateWebForward
+=head2 UpdateWebForward
 
-  $udns->UDNS_UpdateWebForward($string, $string, $string, $unsigned, $zonename);
+  $udns->UpdateWebForward($string, $string, $string, $unsigned, $zonename);
 
   $string = guid
   $string = requestTo

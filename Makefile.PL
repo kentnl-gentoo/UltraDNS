@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
-WriteMakefile(
+my %opts = (
     NAME                => 'UltraDNS',
     AUTHOR              => 'Tim Bunce <Tim.Bunce@pobox.com>',
     VERSION_FROM        => 'lib/UltraDNS.pm',
@@ -21,6 +21,10 @@ WriteMakefile(
     },
     clean   => { FILES => 'UltraDNS-*' },
 );
+$opts{LICENSE} = 'perl' if $ExtUtils::MakeMaker::VERSION >= 6.3002;
+
+WriteMakefile(%opts);
+
 
 
 # =====================================================================

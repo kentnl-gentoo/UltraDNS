@@ -4,7 +4,7 @@
 
 mk_methods.pl - generate UltraDNS::Methods module by parsing the specification
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
   mk_methods.pl NUS_API_XML.txt
 
@@ -158,6 +158,7 @@ for my $methname (sort keys %$method_spec) {
 
     my $info = $method_spec->{$methname};
     my $arg_info = $info->{arg_info};
+    $methname =~ s/^UDNS_//;
 
     my $res = ""; # XXX make "$result = " if method returns a result
     my @args = map {
@@ -204,7 +205,7 @@ package UltraDNS::Methods;
 
 UltraDNS::Methods - Available UltraDNS Transaction Protocol Methods
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
   use UltraDNS;
 
@@ -232,6 +233,10 @@ Transaction Protocol documentation.
 Refer to L<UltraDNS> for more details.
 
 =head1 METHODS
+
+The methods can be called either with our without the C<UDNS_> prefix that
+appears in the UltraDNS docs. They're shown here without the prefix because it
+I prefer it that way.
 
 =cut
 

@@ -50,12 +50,21 @@ sub create_test_zone {
 
     # delete it first just in case there's an old one lying around
     eval { delete_test_zone($udns) };
+
     # create a shiny new one
     $udns->do( $udns->CreatePrimaryZone($zone) );
-    # try hard to ensure it gets deleted when we exit
-    push @at_end, sub { delete_test_zone($udns) };
 
-    return $zone; # return the name for tests to use
+    # try hard to ensure it gets deleted (quietly) when we exit
+    push @at_end, sub {
+	$udns->trace(0);
+	$udns->rollback;
+	delete_test_zone($udns);
+    };
+
+    # return handy info for tests to use
+    (my $domain = $zone) =~ s/\.$//;
+    return  $zone unless wantarray;
+    return ($zone, $domain);
 }
 
 END {
