@@ -1,18 +1,10 @@
 package UltraDNS;
 
-# TODO:
-# tests covering all arg types and main return types
-# test coverage
-# add exception classes to distinguish local vs network vs server method call errors
-# consider potential encoding issues
-# docs
-# perltidy & optimize
-
 use warnings;
 use strict;
 use Carp;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 NAME
 
