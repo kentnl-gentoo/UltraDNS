@@ -13,6 +13,8 @@ my %opts = (
         'Test::Exception' => 0,
         'Net::SSLeay' => 1.35,
         'RPC::XML' => 0.64,
+        'XML::LibXML' => 0,
+        'MIME::Base64' => 0,
     },
     dist    => {
         DIST_DEFAULT=> 'clean distcheck disttest tardist',

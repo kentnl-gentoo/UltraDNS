@@ -34,9 +34,8 @@ you'll need to make slight changes to this script.
 
 =cut
 
-# TODO
+# TODO (maybe)
 # identify methods that return results
-# include some indication of results in the docs
 # sigil doesn't need to be in the data struct (at least not the default '$')
 
 use strict;
@@ -75,7 +74,9 @@ warn "Found ".@methods." methods\n";
 # create Methods.pm and copy the prologue into it
 open my $pm_fh, ">", $pm_filename ## no critic (RequireBriefOpen)
     or die "Unable to open $pm_filename for writing: $!";
-print $pm_fh <DATA>;
+my @prologue = <DATA>;
+s/^:// for @prologue;
+print $pm_fh @prologue;
 
 # process each method found in the spec
 # and write corresponding code into Methods.pm
@@ -166,12 +167,8 @@ for my $methname (sort keys %$method_spec) {
     } @$arg_info;
     my $args = (@args) ? "(". join(", ", @args). ")" : "";
 
-    print $pm_fh <<"EOS";
-=head2 $methname
+    print $pm_fh "=head2 $methname\n\n  $res\$udns->$methname$args;\n\n";
 
-  $res\$udns->$methname$args;
-
-EOS
     if (@$arg_info) {
         for my $arg (@$arg_info) {
             my $example = $arg->{example};
@@ -199,54 +196,54 @@ warn Dumper(\%arg_type_usage) if $opt_trace >= 2;
 warn Dumper([ keys %arg_type_usage ]) if $opt_trace;
 
 __DATA__
-package UltraDNS::Methods;
-
-=head1 NAME
-
-UltraDNS::Methods - Available UltraDNS Transaction Protocol Methods
-
-=head1 SYNOPSIS
-
-  use UltraDNS;
-
-  $udns = UltraDNS->connect(...);
-
-  $udns->...any of these methods...(...);
-  $udns->...any of these methods...(...);
-  $udns->...any of these methods...(...);
-
-  $udns->commit;
-
-  $udns->...any of these methods...(...);
-  $udns->...any of these methods...(...);
-  $udns->...any of these methods...(...);
-
-  $udns->commit;
-
-  # etc
-
-=head1 DESCRIPTION
-
-This module contains details of the UltraDNS methods defined by the UltraDNS
-Transaction Protocol documentation.
-
-Refer to L<UltraDNS> for more details.
-
-=head1 METHODS
-
-The methods can be called either with our without the C<UDNS_> prefix that
-appears in the UltraDNS docs. They're shown here without the prefix because it
-I prefer it that way.
-
-=cut
-
-use strict;
-use warnings;
-
-my $method_spec;
-
-sub _method_spec {
-    my ($self, $method_name) = @_;
-    return $method_spec->{$method_name};
-}
-
+:package UltraDNS::Methods;
+:
+:=head1 NAME
+:
+:UltraDNS::Methods - Available UltraDNS Transaction Protocol Methods
+:
+:=head1 SYNOPSIS
+:
+:  use UltraDNS;
+:
+:  $udns = UltraDNS->connect(...);
+:
+:  $udns->...any of these methods...(...);
+:  $udns->...any of these methods...(...);
+:  $udns->...any of these methods...(...);
+:
+:  $udns->commit;
+:
+:  $udns->...any of these methods...(...);
+:  $udns->...any of these methods...(...);
+:  $udns->...any of these methods...(...);
+:
+:  $udns->commit;
+:
+:  # etc
+:
+:=head1 DESCRIPTION
+:
+:This module contains details of the UltraDNS methods defined by the UltraDNS
+:Transaction Protocol documentation.
+:
+:Refer to L<UltraDNS> for more details.
+:
+:=head1 METHODS
+:
+:The methods can be called either with our without the C<UDNS_> prefix that
+:appears in the UltraDNS docs. They're shown here without the prefix because it
+:I prefer it that way.
+:
+:=cut
+:
+:use strict;
+:use warnings;
+:
+:my $method_spec;
+:
+:sub _method_spec {
+:    my ($self, $method_name) = @_;
+:    return $method_spec->{$method_name};
+:}
+:
