@@ -4,7 +4,7 @@ use Test::Exception;
 
 use UltraDNS;
 
-do 't/util.pl';
+require './t/util.pl';
 
 my ($hp,$s,$u,$p) = test_connect_args();
 

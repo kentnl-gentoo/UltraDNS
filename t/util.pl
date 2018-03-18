@@ -72,3 +72,4 @@ END {
     eval { $_->(); 1 } or warn $@ for @at_end;
 }
 
+1;
